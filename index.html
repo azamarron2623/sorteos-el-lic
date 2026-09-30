@@ -357,16 +357,29 @@
 
 
         /* =========================
-           NÚMEROS SUGERIDOS
+           GRUPO DE NÚMEROS SUGERIDOS
         ========================== */
+
+        .grupo-sugerido {
+            margin-top: 20px;
+            padding: 20px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+
+        .grupo-titulo {
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
 
         .numeros-sugeridos {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 20px 0;
-            min-height: 10px;
+            margin-bottom: 20px;
         }
 
         .numero-sugerido {
@@ -375,12 +388,28 @@
             border: 1px solid #d4af37;
             padding: 10px 13px;
             border-radius: 7px;
-            cursor: pointer;
             font-weight: bold;
-            transition: .15s;
         }
 
-        .numero-sugerido:hover {
+        .botones-grupo {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .boton-secundario {
+            background: #222;
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 8px;
+            border: 1px solid #d4af37;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .boton-secundario:hover {
             background: #d4af37;
             color: #111;
         }
@@ -748,7 +777,7 @@
 
             <p>
                 ¿No sabes qué números elegir?
-                Selecciona cuántos quieres y nosotros los generamos.
+                Selecciona cuántos quieres y nosotros generaremos un grupo para ti.
             </p>
 
 
@@ -792,12 +821,49 @@
             </div>
 
 
-            <!-- AQUÍ APARECEN LAS SUGERENCIAS -->
+            <!-- GRUPO SUGERIDO -->
 
             <div
-                id="numerosSugeridos"
-                class="numeros-sugeridos">
+                id="grupoSugerido"
+                class="grupo-sugerido"
+                style="display:none;">
+
+                <div class="grupo-titulo">
+                    🎲 GRUPO GENERADO
+                </div>
+
+
+                <div
+                    id="numerosSugeridos"
+                    class="numeros-sugeridos">
+                </div>
+
+
+                <div class="botones-grupo">
+
+                    <button
+                        class="boton"
+                        onclick="aceptarGrupo()">
+
+                        ✓ ELEGIR ESTE GRUPO
+
+                    </button>
+
+
+                    <button
+                        class="boton-secundario"
+                        onclick="generarNumerosSuerte()">
+
+                        🎲 GENERAR OTRO GRUPO
+
+                    </button>
+
+                </div>
+
             </div>
+
+
+            <br>
 
 
             <button
@@ -906,6 +972,8 @@
     let numerosSeleccionados = [];
 
     let cantidadSuerte = 1;
+
+    let numerosSugeridosActuales = [];
 
     const PRECIO = 0.50;
 
@@ -1292,22 +1360,24 @@
         );
 
 
-        /*
-         * Al cambiar la cantidad
-         * borramos las sugerencias
-         * anteriores.
-         */
+        numerosSugeridosActuales = [];
+
 
         document.getElementById(
             "numerosSugeridos"
         ).innerHTML = "";
+
+
+        document.getElementById(
+            "grupoSugerido"
+        ).style.display = "none";
 
     }
 
 
 
     /* =========================
-       GENERAR NÚMEROS DE LA SUERTE
+       GENERAR GRUPO DE LA SUERTE
     ========================== */
 
     function generarNumerosSuerte() {
@@ -1318,7 +1388,16 @@
             );
 
 
+        const grupo =
+            document.getElementById(
+                "grupoSugerido"
+            );
+
+
         contenedor.innerHTML = "";
+
+
+        numerosSugeridosActuales = [];
 
 
         const nuevos =
@@ -1348,73 +1427,94 @@
         }
 
 
-        nuevos.forEach(
+        numerosSugeridosActuales =
+            Array.from(nuevos);
+
+
+        numerosSugeridosActuales.forEach(
             numero => {
 
-                const boton =
+                const elemento =
                     document.createElement(
-                        "button"
+                        "span"
                     );
 
 
-                boton.className =
+                elemento.className =
                     "numero-sugerido";
 
 
-                boton.textContent =
+                elemento.textContent =
                     numero;
 
 
-                boton.title =
-                    "Haz clic para seleccionar";
-
-
-                boton.onclick =
-                    function() {
-
-                        aceptarNumeroSugerido(
-                            numero
-                        );
-
-
-                        boton.remove();
-
-                    };
-
-
                 contenedor.appendChild(
-                    boton
+                    elemento
                 );
 
             }
         );
+
+
+        grupo.style.display = "block";
 
     }
 
 
 
     /* =========================
-       ACEPTAR NÚMERO SUGERIDO
+       ACEPTAR GRUPO COMPLETO
     ========================== */
 
-    function aceptarNumeroSugerido(
-        numero
-    ) {
+    function aceptarGrupo() {
 
         if (
-            !numerosSeleccionados.includes(
-                numero
-            )
+            numerosSugeridosActuales.length === 0
         ) {
 
-            numerosSeleccionados.push(
-                numero
-            );
-
-
-            actualizarSeleccion();
+            return;
 
         }
+
+
+        numerosSugeridosActuales.forEach(
+            numero => {
+
+                if (
+                    !numerosSeleccionados.includes(
+                        numero
+                    )
+                ) {
+
+                    numerosSeleccionados.push(
+                        numero
+                    );
+
+                }
+
+            }
+        );
+
+
+        actualizarSeleccion();
+
+
+        /*
+         * Ocultamos el grupo después
+         * de aceptarlo.
+         */
+
+        numerosSugeridosActuales = [];
+
+
+        document.getElementById(
+            "numerosSugeridos"
+        ).innerHTML = "";
+
+
+        document.getElementById(
+            "grupoSugerido"
+        ).style.display = "none";
 
     }
 
