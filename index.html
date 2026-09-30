@@ -7,6 +7,7 @@
     <title>Sorteos El Lic</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -18,6 +19,10 @@
             background: #111;
             color: #fff;
         }
+
+        /* =========================
+           ENCABEZADO
+        ========================== */
 
         header {
             background: #080808;
@@ -48,11 +53,21 @@
             color: #d4af37;
         }
 
+
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
             text-align: center;
             padding: 75px 20px;
             background:
-                radial-gradient(circle at center, #29230d 0%, #111 55%, #080808 100%);
+                radial-gradient(
+                    circle at center,
+                    #29230d 0%,
+                    #111 55%,
+                    #080808 100%
+                );
         }
 
         .hero h1 {
@@ -66,6 +81,11 @@
             color: #ddd;
             margin-bottom: 30px;
         }
+
+
+        /* =========================
+           BOTONES
+        ========================== */
 
         .boton {
             display: inline-block;
@@ -85,6 +105,11 @@
             transform: translateY(-2px);
         }
 
+
+        /* =========================
+           CONTENEDOR
+        ========================== */
+
         .contenedor {
             width: 92%;
             max-width: 1150px;
@@ -98,6 +123,11 @@
             margin-bottom: 30px;
             font-size: 32px;
         }
+
+
+        /* =========================
+           TARJETAS DE SORTEOS
+        ========================== */
 
         .sorteos {
             display: grid;
@@ -165,7 +195,10 @@
             width: 3%;
         }
 
-        /* SECCIÓN DE NÚMEROS */
+
+        /* =========================
+           SECCIÓN DE NÚMEROS
+        ========================== */
 
         .numeros-seccion {
             background: #0d0d0d;
@@ -179,6 +212,11 @@
             margin-top: -15px;
             margin-bottom: 30px;
         }
+
+
+        /* =========================
+           BUSCADOR
+        ========================== */
 
         .buscador {
             max-width: 650px;
@@ -218,6 +256,11 @@
             min-height: 25px;
             font-weight: bold;
         }
+
+
+        /* =========================
+           LISTA DE NÚMEROS
+        ========================== */
 
         .numeros-titulo {
             text-align: center;
@@ -262,7 +305,10 @@
             border-color: #d4af37;
         }
 
-        /* NÚMEROS DE LA SUERTE */
+
+        /* =========================
+           NÚMEROS DE LA SUERTE
+        ========================== */
 
         .suerte {
             margin-top: 35px;
@@ -309,6 +355,41 @@
             border-color: #d4af37;
         }
 
+
+        /* =========================
+           NÚMEROS SUGERIDOS
+        ========================== */
+
+        .numeros-sugeridos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+            min-height: 10px;
+        }
+
+        .numero-sugerido {
+            background: #222;
+            color: #fff;
+            border: 1px solid #d4af37;
+            padding: 10px 13px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: .15s;
+        }
+
+        .numero-sugerido:hover {
+            background: #d4af37;
+            color: #111;
+        }
+
+
+        /* =========================
+           MIS NÚMEROS
+        ========================== */
+
         .seleccion {
             margin-top: 30px;
             background: #191919;
@@ -332,11 +413,26 @@
         }
 
         .numero-elegido {
+            position: relative;
             background: #d4af37;
             color: #111;
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 9px 34px 9px 12px;
+            border-radius: 7px;
             font-weight: bold;
+            display: inline-block;
+        }
+
+        .eliminar-numero {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            color: #111;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
         }
 
         .total {
@@ -345,6 +441,11 @@
             margin-bottom: 20px;
         }
 
+
+        /* =========================
+           CONTACTO
+        ========================== */
+
         .whatsapp {
             display: inline-block;
             margin-top: 20px;
@@ -352,6 +453,11 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
             text-align: center;
@@ -364,6 +470,11 @@
         footer strong {
             color: #d4af37;
         }
+
+
+        /* =========================
+           CELULAR
+        ========================== */
 
         @media (max-width: 600px) {
 
@@ -401,11 +512,16 @@
             .numero {
                 font-size: 12px;
             }
+
         }
+
     </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -414,18 +530,34 @@
     </div>
 
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#sorteos">Sorteos</a>
-        <a href="#numeros">Números</a>
-        <a href="#contacto">Contacto</a>
+
+        <a href="#inicio">
+            Inicio
+        </a>
+
+        <a href="#sorteos">
+            Sorteos
+        </a>
+
+        <a href="#numeros">
+            Números
+        </a>
+
+        <a href="#contacto">
+            Contacto
+        </a>
+
     </nav>
 
 </header>
 
 
+
 <section class="hero" id="inicio">
 
-    <h1>SORTEOS EL LIC</h1>
+    <h1>
+        SORTEOS EL LIC
+    </h1>
 
     <p>
         Elige tu número. Participa. Gana.
@@ -438,13 +570,16 @@
 </section>
 
 
+
 <section class="contenedor" id="sorteos">
 
     <h2 class="titulo">
         SORTEO DE LANZAMIENTO
     </h2>
 
+
     <div class="sorteos">
+
 
         <div class="tarjeta">
 
@@ -468,6 +603,7 @@
                 $0.50 por número
             </div>
 
+
             <div class="datos-sorteo">
 
                 <p>
@@ -484,19 +620,25 @@
 
             </div>
 
+
             <p>
                 Progreso de venta
             </p>
 
             <div class="progreso">
-                <div class="progreso-barra"></div>
+
+                <div class="progreso-barra">
+                </div>
+
             </div>
+
 
             <a href="#numeros" class="boton">
                 ELEGIR NÚMEROS
             </a>
 
         </div>
+
 
 
         <div class="tarjeta">
@@ -520,14 +662,17 @@
 
         </div>
 
+
     </div>
 
 </section>
 
 
+
 <section class="numeros-seccion" id="numeros">
 
     <div class="contenedor">
+
 
         <h2 class="titulo">
             ELIGE TUS NÚMEROS
@@ -538,11 +683,15 @@
         </p>
 
 
+
+        <!-- BUSCADOR -->
+
         <div class="buscador">
 
             <h3>
                 🔎 ¿Tienes un número en mente?
             </h3>
+
 
             <div class="buscador-contenedor">
 
@@ -554,13 +703,17 @@
                     inputmode="numeric"
                 >
 
+
                 <button
                     class="boton"
                     onclick="buscarNumero()">
+
                     BUSCAR
+
                 </button>
 
             </div>
+
 
             <div
                 class="resultado-busqueda"
@@ -570,15 +723,22 @@
         </div>
 
 
+
+        <!-- LISTA -->
+
         <h3 class="numeros-titulo">
             Números disponibles
         </h3>
+
 
         <div
             class="numeros"
             id="listaNumeros">
         </div>
 
+
+
+        <!-- NÚMEROS DE LA SUERTE -->
 
         <div class="suerte">
 
@@ -591,26 +751,68 @@
                 Selecciona cuántos quieres y nosotros los generamos.
             </p>
 
+
             <div class="cantidad">
 
-                <button onclick="seleccionarCantidad(1, this)">1</button>
-                <button onclick="seleccionarCantidad(5, this)">5</button>
-                <button onclick="seleccionarCantidad(10, this)">10</button>
-                <button onclick="seleccionarCantidad(20, this)">20</button>
-                <button onclick="seleccionarCantidad(30, this)">30</button>
-                <button onclick="seleccionarCantidad(50, this)">50</button>
-                <button onclick="seleccionarCantidad(100, this)">100</button>
+                <button
+                    onclick="seleccionarCantidad(1, this)">
+                    1
+                </button>
+
+                <button
+                    onclick="seleccionarCantidad(5, this)">
+                    5
+                </button>
+
+                <button
+                    onclick="seleccionarCantidad(10, this)">
+                    10
+                </button>
+
+                <button
+                    onclick="seleccionarCantidad(20, this)">
+                    20
+                </button>
+
+                <button
+                    onclick="seleccionarCantidad(30, this)">
+                    30
+                </button>
+
+                <button
+                    onclick="seleccionarCantidad(50, this)">
+                    50
+                </button>
+
+                <button
+                    onclick="seleccionarCantidad(100, this)">
+                    100
+                </button>
 
             </div>
+
+
+            <!-- AQUÍ APARECEN LAS SUGERENCIAS -->
+
+            <div
+                id="numerosSugeridos"
+                class="numeros-sugeridos">
+            </div>
+
 
             <button
                 class="boton"
                 onclick="generarNumerosSuerte()">
-                🎲 GENERAR MIS NÚMEROS
+
+                🎲 GENERAR NÚMEROS
+
             </button>
 
         </div>
 
+
+
+        <!-- MIS NÚMEROS -->
 
         <div class="seleccion">
 
@@ -618,25 +820,40 @@
                 🛒 MIS NÚMEROS
             </h3>
 
+
             <div id="misNumeros">
+
                 <p style="color:#aaa;">
                     Todavía no has seleccionado números.
                 </p>
+
             </div>
+
 
             <div class="total">
-                Total: $<span id="total">0.00</span>
+
+                Total: $<span id="total">
+                    0.00
+                </span>
+
             </div>
 
-            <button class="boton" onclick="continuarCompra()">
+
+            <button
+                class="boton"
+                onclick="continuarCompra()">
+
                 CONTINUAR
+
             </button>
 
         </div>
 
+
     </div>
 
 </section>
+
 
 
 <section class="contenedor" id="contacto">
@@ -645,17 +862,24 @@
         CONTACTO
     </h2>
 
+
     <p style="text-align:center; color:#ccc;">
+
         ¿Tienes dudas sobre nuestros sorteos?
+
     </p>
 
+
     <p style="text-align:center;">
+
         <a class="whatsapp" href="#">
             Próximamente WhatsApp
         </a>
+
     </p>
 
 </section>
+
 
 
 <footer>
@@ -671,73 +895,119 @@
 </footer>
 
 
+
 <script>
 
-    /*
-     * LISTA VISUAL DE NÚMEROS
-     *
-     * Por ahora utilizamos números aleatorios para
-     * simular la experiencia.
-     *
-     * Más adelante esta lista se conectará a la
-     * base de datos real.
-     */
+
+    /* =========================
+       VARIABLES
+    ========================== */
 
     let numerosSeleccionados = [];
+
     let cantidadSuerte = 1;
 
     const PRECIO = 0.50;
 
+
+
+    /* =========================
+       GENERAR NÚMERO ALEATORIO
+    ========================== */
+
     function numeroAleatorio() {
 
-        let numero = Math.floor(
-            Math.random() * 100000000
-        );
+        let numero =
+            Math.floor(
+                Math.random() * 100000000
+            );
 
-        return numero.toString().padStart(8, "0");
+        return numero
+            .toString()
+            .padStart(8, "0");
+
     }
 
+
+
+    /* =========================
+       CARGAR LISTA DE NÚMEROS
+    ========================== */
 
     function cargarNumeros() {
 
         const contenedor =
-            document.getElementById("listaNumeros");
+            document.getElementById(
+                "listaNumeros"
+            );
 
         contenedor.innerHTML = "";
 
-        const numeros = new Set();
+        const numeros =
+            new Set();
 
-        while (numeros.size < 100) {
 
-            numeros.add(numeroAleatorio());
+        while (
+            numeros.size < 100
+        ) {
+
+            numeros.add(
+                numeroAleatorio()
+            );
 
         }
 
-        numeros.forEach(numero => {
 
-            const boton =
-                document.createElement("button");
+        numeros.forEach(
+            numero => {
 
-            boton.className = "numero";
-            boton.textContent = numero;
+                const boton =
+                    document.createElement(
+                        "button"
+                    );
 
-            boton.onclick = function() {
+                boton.className =
+                    "numero";
 
-                seleccionarNumero(numero, boton);
+                boton.textContent =
+                    numero;
 
-            };
 
-            contenedor.appendChild(boton);
+                boton.onclick =
+                    function() {
 
-        });
+                        seleccionarNumero(
+                            numero,
+                            boton
+                        );
+
+                    };
+
+
+                contenedor.appendChild(
+                    boton
+                );
+
+            }
+        );
 
     }
 
 
-    function seleccionarNumero(numero, elemento) {
+
+    /* =========================
+       SELECCIONAR NÚMERO
+    ========================== */
+
+    function seleccionarNumero(
+        numero,
+        elemento
+    ) {
 
         if (
-            numerosSeleccionados.includes(numero)
+            numerosSeleccionados.includes(
+                numero
+            )
         ) {
 
             numerosSeleccionados =
@@ -749,9 +1019,13 @@
                 "seleccionado"
             );
 
-        } else {
+        }
 
-            numerosSeleccionados.push(numero);
+        else {
+
+            numerosSeleccionados.push(
+                numero
+            );
 
             elemento.classList.add(
                 "seleccionado"
@@ -759,17 +1033,27 @@
 
         }
 
+
         actualizarSeleccion();
 
     }
 
 
+
+    /* =========================
+       ACTUALIZAR MIS NÚMEROS
+    ========================== */
+
     function actualizarSeleccion() {
 
         const contenedor =
-            document.getElementById("misNumeros");
+            document.getElementById(
+                "misNumeros"
+            );
+
 
         contenedor.innerHTML = "";
+
 
         if (
             numerosSeleccionados.length === 0
@@ -778,78 +1062,194 @@
             contenedor.innerHTML =
                 '<p style="color:#aaa;">Todavía no has seleccionado números.</p>';
 
-        } else {
+        }
 
-            numerosSeleccionados.forEach(numero => {
+        else {
 
-                const elemento =
-                    document.createElement("span");
+            numerosSeleccionados.forEach(
+                numero => {
 
-                elemento.className =
-                    "numero-elegido";
+                    const elemento =
+                        document.createElement(
+                            "span"
+                        );
 
-                elemento.textContent =
-                    numero;
 
-                contenedor.appendChild(elemento);
+                    elemento.className =
+                        "numero-elegido";
 
-            });
+
+                    elemento.textContent =
+                        numero;
+
+
+                    const eliminar =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    eliminar.className =
+                        "eliminar-numero";
+
+
+                    eliminar.textContent =
+                        "✕";
+
+
+                    eliminar.title =
+                        "Eliminar número";
+
+
+                    eliminar.onclick =
+                        function() {
+
+                            numerosSeleccionados =
+                                numerosSeleccionados.filter(
+                                    n => n !== numero
+                                );
+
+
+                            actualizarSeleccion();
+
+
+                            actualizarListaVisual(
+                                numero
+                            );
+
+                        };
+
+
+                    elemento.appendChild(
+                        eliminar
+                    );
+
+
+                    contenedor.appendChild(
+                        elemento
+                    );
+
+                }
+            );
 
         }
 
-        const total =
-            numerosSeleccionados.length * PRECIO;
 
-        document.getElementById("total")
-            .textContent = total.toFixed(2);
+        const total =
+            numerosSeleccionados.length *
+            PRECIO;
+
+
+        document.getElementById(
+            "total"
+        ).textContent =
+            total.toFixed(2);
 
     }
 
 
+
+    /* =========================
+       ACTUALIZAR LISTA VISUAL
+    ========================== */
+
+    function actualizarListaVisual(
+        numero
+    ) {
+
+        const botones =
+            document.querySelectorAll(
+                ".numero"
+            );
+
+
+        botones.forEach(
+            boton => {
+
+                if (
+                    boton.textContent === numero
+                ) {
+
+                    boton.classList.remove(
+                        "seleccionado"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* =========================
+       BUSCAR NÚMERO
+    ========================== */
+
     function buscarNumero() {
 
         const input =
-            document.getElementById("busqueda");
+            document.getElementById(
+                "busqueda"
+            );
+
 
         const resultado =
             document.getElementById(
                 "resultadoBusqueda"
             );
 
+
         let numero =
-            input.value.replace(/\D/g, "");
+            input.value.replace(
+                /\D/g,
+                ""
+            );
 
-        if (numero.length !== 8) {
 
-            resultado.style.color = "#d4af37";
+        if (
+            numero.length !== 8
+        ) {
+
+            resultado.style.color =
+                "#d4af37";
+
 
             resultado.textContent =
                 "Escribe exactamente 8 dígitos.";
+
 
             return;
 
         }
 
+
         /*
-         * Por ahora todos los números se consideran
-         * disponibles.
-         *
-         * Más adelante esta función consultará
-         * la base de datos real.
+         * TEMPORALMENTE TODOS LOS NÚMEROS
+         * SE CONSIDERAN DISPONIBLES.
          */
 
-        resultado.style.color = "#7CFC00";
+        resultado.style.color =
+            "#7CFC00";
+
 
         resultado.innerHTML =
             "✓ El número <strong>" +
             numero +
             "</strong> está disponible.";
 
+
         if (
-            !numerosSeleccionados.includes(numero)
+            !numerosSeleccionados.includes(
+                numero
+            )
         ) {
 
-            numerosSeleccionados.push(numero);
+            numerosSeleccionados.push(
+                numero
+            );
+
 
             actualizarSeleccion();
 
@@ -858,27 +1258,72 @@
     }
 
 
+
+    /* =========================
+       SELECCIONAR CANTIDAD
+    ========================== */
+
     function seleccionarCantidad(
         cantidad,
         boton
     ) {
 
-        cantidadSuerte = cantidad;
+        cantidadSuerte =
+            cantidad;
+
 
         document
-            .querySelectorAll(".cantidad button")
-            .forEach(b => {
-                b.classList.remove("activo");
-            });
+            .querySelectorAll(
+                ".cantidad button"
+            )
+            .forEach(
+                b => {
 
-        boton.classList.add("activo");
+                    b.classList.remove(
+                        "activo"
+                    );
+
+                }
+            );
+
+
+        boton.classList.add(
+            "activo"
+        );
+
+
+        /*
+         * Al cambiar la cantidad
+         * borramos las sugerencias
+         * anteriores.
+         */
+
+        document.getElementById(
+            "numerosSugeridos"
+        ).innerHTML = "";
 
     }
 
 
+
+    /* =========================
+       GENERAR NÚMEROS DE LA SUERTE
+    ========================== */
+
     function generarNumerosSuerte() {
 
-        const nuevos = new Set();
+        const contenedor =
+            document.getElementById(
+                "numerosSugeridos"
+            );
+
+
+        contenedor.innerHTML = "";
+
+
+        const nuevos =
+            new Set();
+
 
         while (
             nuevos.size < cantidadSuerte
@@ -887,32 +1332,97 @@
             const numero =
                 numeroAleatorio();
 
+
             if (
-                !numerosSeleccionados.includes(numero)
+                !numerosSeleccionados.includes(
+                    numero
+                )
             ) {
 
-                nuevos.add(numero);
+                nuevos.add(
+                    numero
+                );
 
             }
 
         }
 
-        nuevos.forEach(numero => {
 
-            if (
-                !numerosSeleccionados.includes(numero)
-            ) {
+        nuevos.forEach(
+            numero => {
 
-                numerosSeleccionados.push(numero);
+                const boton =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                boton.className =
+                    "numero-sugerido";
+
+
+                boton.textContent =
+                    numero;
+
+
+                boton.title =
+                    "Haz clic para seleccionar";
+
+
+                boton.onclick =
+                    function() {
+
+                        aceptarNumeroSugerido(
+                            numero
+                        );
+
+
+                        boton.remove();
+
+                    };
+
+
+                contenedor.appendChild(
+                    boton
+                );
 
             }
-
-        });
-
-        actualizarSeleccion();
+        );
 
     }
 
+
+
+    /* =========================
+       ACEPTAR NÚMERO SUGERIDO
+    ========================== */
+
+    function aceptarNumeroSugerido(
+        numero
+    ) {
+
+        if (
+            !numerosSeleccionados.includes(
+                numero
+            )
+        ) {
+
+            numerosSeleccionados.push(
+                numero
+            );
+
+
+            actualizarSeleccion();
+
+        }
+
+    }
+
+
+
+    /* =========================
+       CONTINUAR COMPRA
+    ========================== */
 
     function continuarCompra() {
 
@@ -924,9 +1434,11 @@
                 "Primero selecciona al menos un número."
             );
 
+
             return;
 
         }
+
 
         alert(
             "Has seleccionado " +
@@ -939,9 +1451,16 @@
     }
 
 
+
+    /* =========================
+       INICIAR
+    ========================== */
+
     cargarNumeros();
 
+
 </script>
+
 
 </body>
 </html>
